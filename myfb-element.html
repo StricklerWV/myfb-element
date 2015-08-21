@@ -24,21 +24,22 @@ Example:
     :host {
       
     }
+    h1 {
+      text-align: center;
+      background-color: blue;
+    }
 
   </style>
    <template is="dom-bind">
-   <h1>Welcome to Tim's Dinosaur Facts Page</h1>
+   <h1>Welcome to Tim's Album Page</h1>
     <firebase-collection
-      order-by-child="length"
+      order-by-child="Release Date"
       limit-to-first="10"
-      location="https://dinosaur-facts.firebaseio.com/dinosaurs"
-      location="https://dinosaur-facts.firebaseio.com/scores"
-      data="{{dinosaurs}}"></firebase-collection>
-    <template is="dom-repeat" items="[[dinosaurs]]" as="dinosaur">
-      <h4>[[dinosaur.__firebaseKey__]]</h4>
-      <span>Height: </span><span>[[dinosaur.height]]</span><span>m</span><br>
-      <span>Length: </span><span>[[dinosaur.length]]</span><span>m</span><br>
-      <span>Weight: </span><span>[[dinosaur.weight]]</span><span>lbs</span>
+      location="https://glaring-heat-4695.firebaseio.com/Albums"
+      data="{{albums}}"></firebase-collection>
+    <template is="dom-repeat" items="[[albums]]" as="album">
+      <h4>[[album.__firebaseKey__]]</h4>
+      <span>Release Date: </span><span>[[album.Release Date]]</span>
       <hr>
     </template>
   </template>
