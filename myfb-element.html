@@ -9,6 +9,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../firebase-element/firebase-collection.html">
+<link rel="import" href="../google-map/google-map.html">
 <!--
 An element providing a solution to no problem in particular.
 
@@ -28,10 +29,14 @@ Example:
       text-align: center;
       background-color: blue;
     }
+    google-map {
+      height: 600px;
+      width: 600px;
+    }
 
   </style>
    <template is="dom-bind">
-   <h1>Welcome to Tim's Album Page</h1>
+   <h1>Welcome to Tim's Element Pot Luck</h1>
     <firebase-collection
       order-by-child="Release Date"
       limit-to-first="10"
@@ -42,7 +47,9 @@ Example:
       <span>Release Date: </span><span>[[album.Release Date]]</span>
       <hr>
     </template>
+    <google-map zoom="15" latitude="39.288969" longitude="-77.858808"></google-map>
   </template>
+
 
 </dom-module>
 
